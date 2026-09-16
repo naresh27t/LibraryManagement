@@ -26,4 +26,8 @@ public String Login(@RequestParam String studentname,@RequestParam String passwo
     return "redirect:/Dashborad.html";
 
 }
+@GetMapping ("/logout")
+public String logout(){
+    return "redirect:/index.html";
+}
 }
