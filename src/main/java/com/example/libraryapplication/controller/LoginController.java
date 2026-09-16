@@ -20,7 +20,10 @@ public String showloginpage(){
 @PostMapping ("\signin")
 public String Login(@RequestParam String studentname,@RequestParam String password){
     Student entity = repo.findByStudentnameAndPassword(studentname,password);
-    
+    if(entity==null){
+        return "redirect:/login.html";
+    }
+    return "redirect:/Dashborad.html";
 
 }
 }
