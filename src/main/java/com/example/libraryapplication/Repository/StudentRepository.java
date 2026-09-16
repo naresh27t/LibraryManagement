@@ -6,5 +6,5 @@ import com.example.libraryapplication.Domain.Student;
 
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
-Student findByStudentNameAndPassword(String studentname,String  password);
+Student findByStudentnameAndPassword(String studentname,String  password);
 }

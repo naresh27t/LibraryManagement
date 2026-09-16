@@ -12,7 +12,8 @@ import com.example.libraryapplication.Repository.StudentRepository;
 public class LoginController {
     final StudentRepository repo;
 
-  LoginController(StudentRepository repo) {
+    @SuppressWarnings("unused")
+    LoginController(StudentRepository repo) {
     this.repo = repo;
   }
 @GetMapping ("\signin")
@@ -21,7 +22,7 @@ public String showloginpage(){
 }
 @PostMapping ("\signin")
 public String Login(@RequestParam String studentname,@RequestParam String password){
-    Student entity = repo.findByStudentNameAndPassword(studentname,password);
+    Student entity = repo.findByStudentnameAndPassword(studentname,password);
     if(entity==null){
         return "redirect:/login.html";
     }
